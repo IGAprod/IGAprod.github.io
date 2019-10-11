@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Modul 1</title>
-    <style>
-        tbody .scheduleTr:hover {
-            background: #f3bd48;
-            color: #fff;
-        }
-    </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -17,11 +13,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/add.js"></script>
 </head>
 <body>
-
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,48 +27,39 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
             <li class="nav-item"">
-                <a class="nav-link" href="/html/add.html">Add new</a>
+                <a class="nav-link" href="add.html">Add new</a>
             </li>
+
         </ul>
     </div>
 </nav>
 
-<div class="container mt-4" id="searchBlock">
-
-    <form  id="searchPanel">
-      <label> Search : <input type="text" name="search" id="search"/></label>
-      <label class="ml-4"> Filter by :</label>
-      <select id='filter' name="filter" form="searchPanel">
-        <option value="All">All</option>
-        <option value="Create">Create</option>
-        <option value="No">No</option>
-        <option value="Due">Due</option>
-        <option value="Supply">Supply</option>
-        <option value="Comment">Comment</option>
-      </select>
-      <label class="ml-4"> Order by :</label>
-      <select id='order' name="order" form="searchPanel">
-        <option value="Id">Id</option>
-        <option value="Create">Create</option>
-        <option value="No">No</option>
-        <option value="Due">Due</option>
-        <option value="Supply">Supply</option>
-        <option value="Comment">Comment</option>
-        <option value="None">None</option>
-      </select>
-      <select id = 'type' name="type" form="searchPanel">
-        <option value="Asc">Asc</option>
-        <option value="Desc">Desc</option>
-      </select>
-
-      <button type="button" id = 'Go' class="btn btn-primary btn-sm ml-2" >Go</button>
+<div class="container mt-5">
+    <form id="addForm" method="post" class="mt-5">
+       <div class="form-group">
+          <label for="inputNumber">Number</label>
+          <input type="number" class="form-control" id="number"  name="number" placeholder="Enter number">
+       </div>
+       <div class="form-group">
+          <label for="inputInvoiceDate">Invoice date</label>
+          <input type="date" class="form-control" id="date_created"  style="width: 15%" name="date_created" placeholder="Enter invoice date">
+       </div>
+       <div class="form-group">
+          <label for="inputDueDate">Due Date</label>
+          <input type="date" class="form-control" id="date_due" style="width: 15%" name="date_due" placeholder="Enter due date">
+       </div>
+       <div class="form-group">
+          <label for="inputSupplyDate">Supply Date</label>
+          <input type="date" class="form-control" id="date_supply" style="width: 15%" name="date_supply" placeholder="Enter supply date">
+       </div>
+       <div class="form-group">
+         <label for="Comment">Comment</label>
+         <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+       </div>
+        <button type="button" class="btn btn-primary" >save</button>
     </form>
-</div>
-
-<div class="container mt-1">
-    <div id="Table">
-    </div>
 </div>
 
 </body>
