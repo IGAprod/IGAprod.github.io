@@ -52,7 +52,7 @@ function addInvoice(data) {
        $.ajax({
            type: "PUT",
            contentType: "application/json",
-           url: "http://localhost:3000/invoices/" + data.id,
+           url: "https://igaprodtest2.herokuapp.com/invoices/" + data.id,
            data: JSON.stringify(data),
            dataType: 'json',
            success: function(result){
@@ -69,7 +69,7 @@ function getInvoice(id) {
        $.ajax({
            type: "GET",
            contentType: "application/json",
-           url: "http://localhost:3000/invoices/"+id,
+           url: "https://igaprodtest2.herokuapp.com/invoices/"+id,
            dataType: 'json',
            success: function(result){
                console.log(result);

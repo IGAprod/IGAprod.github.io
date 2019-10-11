@@ -30,7 +30,7 @@ function loadTable() {
 
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/invoices",
+        url: "https://igaprodtest2.herokuapp.com/invoices/",
         dataType: 'json',
         success: function(result){
             showTable(result);
@@ -56,7 +56,7 @@ $(document).on('click', '.btn_edit', function(event)
     var tbl_row = $(this).closest('tr');
     var row_id = tbl_row.attr('row_id');
     localStorage.setItem( 'id', row_id );
-    document.location.href = "change.html";
+    document.location.href = "../html/change.html";
 });
 
 $(document).on('click', '#Go', function(event){

@@ -52,7 +52,7 @@ function addInvoices(data) {
        $.ajax({
            type: "POST",
            contentType: "application/json",
-           url: "http://localhost:3000/invoices",
+           url: "https://igaprodtest2.herokuapp.com/invoices/",
            data: JSON.stringify(data),
            dataType: 'json',
            success: function(result){
