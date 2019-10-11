@@ -2,7 +2,7 @@
 var obj = {"Id": "id", "Create": "date_created","No":"number","Due":"date_due","Supply":"date_supply","Comment":"comment"};
 
 $(document).ready(function (){
-	alert("hello world")
+	console.log("dsadasda");
   loadTable();
 });
 
