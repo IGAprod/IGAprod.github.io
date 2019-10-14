@@ -65,7 +65,7 @@ $(document).on('click', '#Go', function(event){
     var search = $("#search").val();
     var filter = $("#filter").val();
     var order = $("#order").val();
-    var type = $("#type").val();
+    var type = $("#type").val().toLowerCase();
 
     console.log(search);
     console.log(filter);
@@ -82,7 +82,12 @@ function getSearch(search, filter, order, type){
       paramters = "?_sort=" + obj[order] + "&_order=" + type;
   }
   if(search!="" && filter !="All"){
-      paramters = "?" + obj[filter] + "=" + search + "&_sort=" + obj[order] + "&_order=" + type;
+      if(order !="None"){
+         paramters = "?" + obj[filter] + "=" + search + "&_sort=" + obj[order] + "&_order=" + type;
+      }
+      else{
+         paramters = "?" + obj[filter] + "=" + search;
+      }
   }else{
       if(order !="None"){
         paramters = "?q=" + search + "&_sort=" + obj[order] + "&_order=" + type;
