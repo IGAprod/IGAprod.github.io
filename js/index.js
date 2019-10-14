@@ -77,6 +77,9 @@ $(document).on('click', '#Go', function(event){
 
 function getSearch(search, filter, order, type){
   var paramters;
+if(search == "" && order == "None"){
+	  return;
+  }
 
   if(search=="" && order != "None"){
       paramters = "?_sort=" + obj[order] + "&_order=" + type;
@@ -89,12 +92,16 @@ function getSearch(search, filter, order, type){
          paramters = "?" + obj[filter] + "=" + search;
       }
   }else{
-      if(order !="None"){
+	  
+	  if(search!="" && filter == "All"){
+		  if(order !="None"){
         paramters = "?q=" + search + "&_sort=" + obj[order] + "&_order=" + type;
       }
       else {
-        paramters = "?q=" + search;
+			paramters = "?q=" + search;  
       }
+		  
+	  }
   }
 
   console.log(paramters);
