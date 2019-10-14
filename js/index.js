@@ -65,7 +65,7 @@ $(document).on('click', '#Go', function(event){
     var search = $("#search").val();
     var filter = $("#filter").val();
     var order = $("#order").val();
-    var type = $("#type").val().toLowerCase();
+    var type = $("#type").val();
 
     console.log(search);
     console.log(filter);
