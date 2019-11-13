@@ -7,3 +7,9 @@ node_js:
 branches:
   only:
     - master
+    
+deploy:
+  provider: heroku
+  app: igaprodtest2
+  api_key:
+    secure: fac24245-5458-4c29-b088-cc15d0af8d23
